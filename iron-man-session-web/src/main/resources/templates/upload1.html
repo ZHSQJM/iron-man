@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<style type="text/css">
+    video{
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+</style>
+<body>
+<form>
+    <div class="form-group">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="progressbar">
+                <span id="num">10</span>
+            </div>
+        </div>
+        <!--<button class="btn btn-cyan btn-w-md" type="button">-->
+           <!--<i class="fa fa-upload"></i>-->
+        <!--</button>-->
+        <input type="file"  onchange="upload()" id="file-upload-input">
+        <div class="row">
+            <div class="col-md-4">
+                <video src="" id="zhs" controls="controls"></video>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+</body>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+
+<script>
+   function upload() {
+       var formData = new window.FormData();
+       var file = document.querySelector('#file-upload-input').files[0];
+       var suffixs = ["mp4"];
+       var fileName  = file.name;
+       console.log(fileName)
+       var suffix = fileName.substring(fileName.lastIndexOf(".")+1,fileName.length).toLowerCase();
+       console.log(suffix)
+       var  validateSuffix = false;
+       for(var i = 0;i<suffixs.length;i++){
+          console.log(suffixs[i].toLowerCase())
+          if(suffixs[i].toLowerCase() === suffix){
+              validateSuffix = true;
+              break;
+          }
+      }
+      if(!validateSuffix){
+          alert("文件格式不正确！只支持上传:"+suffixs.join(","));
+          return;
+      }
+
+
+       var size = file.size;
+       //唯一文件表示 每个分片的表示
+       formData.append('file',file);
+       formData.append('type',"C");
+       formData.append('name',file.name);
+       formData.append('suffix',suffix);
+       formData.append('size',size);
+       upoadShard(formData);
+   }
+   function  upoadShard(formData) {
+       $("#progressbar").width((shardIndex-1)*100/size+"%");
+      // $("#num").html((shardIndex-1)*100/shardTotal+"%");
+       $.ajax({
+           url:"http://127.0.0.1:7001/file/upload-test",
+         //  url:"http://127.0.0.1:7001/file/oss-append",
+           dataType : "json",
+           type : 'POST',
+           contentType: false,
+           processData: false,  // 增加这一行，不处理参数
+           data:formData,
+           success:function(result){
+               console.log(result)
+               // $("#progressbar").width(shardIndex*100/shardTotal+"%");
+               // $("#num").html(shardIndex*100/shardTotal+"%");
+               var image = result.data;
+               $("#zhs").attr('src',image);
+               console.log("头像地址:",image);
+           }});
+   }
+   function getTime() {
+      var ele = document.getElementById("zhs");
+      var duration = parseInt(ele.duration,10);
+     console.log(duration)
+   }
+   function getFileShard(shardIndex,shardSize) {
+       var file = document.querySelector('#file-upload-input').files[0];
+       let start = (shardIndex-1)* shardSize;
+       let end = Math.min(file.size,start+shardSize);
+       let fileShard = file.slice(start,end);
+       return fileShard;
+   }
+   //
+   // var fileReader = new FileReader();
+   // fileReader.onload = function(e){
+   //     var base64 = e.target.result
+   //     console.log("base64",base64);
+   //     var param = {
+   //         'shard': base64,
+   //         'shardIndex':shardIndex,
+   //         'shardSize':shardSize,
+   //         'shardTotal':shardTotal,
+   //         'type':'C',
+   //         'name':file.name,
+   //         'suffix':suffix,
+   //         'size':size,
+   //         'key1':file.name
+   //     };
+   //     $.ajax({
+   //         url:"http://127.0.0.1:7001/file/upload",
+   //         dataType : "json",
+   //         type : 'POST',
+   //         contentType: false,
+   //         processData: false,  // 增加这一行，不处理参数
+   //         data:param,
+   //         success:function(result){
+   //             console.log(result)
+   //             var image = result.data;
+   //             $("#zhs").attr('src',image);
+   //             console.log("头像地址:",image);
+   //             getTime();
+   //         }});
+   // };
+   // fileReader.readAsDataURL(fileShard)
+
+</script>
+</html>

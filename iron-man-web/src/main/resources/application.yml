@@ -1,0 +1,21 @@
+server:
+  port: 8081
+  servlet:
+    session:
+      timeout:
+      cookie:
+        http-only: true
+        secure: false
+
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/iron_oauth?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+      username: root
+      password: zhs
+      platform: mysql
+      type: com.alibaba.druid.pool.DruidDataSource
+jwt:
+  secret: iron-man
+  expiration: 3600000
+  header: Authorization

@@ -1,0 +1,45 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /file
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/iron_file?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: zhs
+  application:
+    name: iron_man_file
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+file:
+  path: D:/file/iron/man/
+  domain: http://127.0.0.1:7001/file/f/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/  oss-cn-beijing.aliyuncs.com
+
+##oss-cn-beijing.aliyuncs.com
+##LTAI4G4nnmfTWrBQ2Pn5Vy9v
+##Mijc3BcUCzwJzd3UQ8IdaZMMLBl0Y0
+oss:
+  endpoint: https://oss-cn-beijing.aliyuncs.com
+  accesskeyId: LTAI4G4nnmfTWrBQ2Pn5Vy9v
+  accesskeySecret: Mijc3BcUCzwJzd3UQ8IdaZMMLBl0Y0
+  bucket: iron-file
+  domian: https://iron-file.oss-cn-beijing.aliyuncs.com
+
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret:  secret
+      access-token-uri: http://localhost:7800/oauth/token
+      user-authorization-uri: http:..localhost:7800/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:7800/oauth/check_token

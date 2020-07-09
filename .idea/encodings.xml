@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-blog" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-getway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-oauth2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-quartz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-resource" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-session-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-man-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iron-study" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

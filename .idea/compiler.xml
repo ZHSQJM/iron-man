@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="iron-man-base" />
+        <module name="iron-man-blog" />
+        <module name="iron-man-common" />
+        <module name="iron-man-eureka" />
+        <module name="iron-man-file" />
+        <module name="iron-man-getway" />
+        <module name="iron-man-oauth2" />
+        <module name="iron-man-order" />
+        <module name="iron-man-quartz" />
+        <module name="iron-man-resource" />
+        <module name="iron-man-session-web" />
+        <module name="iron-man-web" />
+        <module name="iron-study" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="iron-man-entity" target="1.0" />
+      <module name="iron-man-service" target="1.0" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

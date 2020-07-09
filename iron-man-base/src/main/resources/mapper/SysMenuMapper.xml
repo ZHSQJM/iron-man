@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhs.mapper.sys.SysMenuMapper">
+
+
+
+    <select id="getMenuyByUserId" resultType="com.zhs.entity.sys.SysMenu">
+
+        SELECT m.* FROM sys_user as u
+LEFT JOIN sys_user_role as ur on u.id = ur.user_id
+LEFT JOIN sys_role as r on r.id = ur.role_id
+LEFT join sys_role_menu as rm on r.id = rm.role_id
+left JOIN sys_menu as m on m.id = rm.menu_id
+where u.id = #{userId}
+    </select>
+</mapper>
