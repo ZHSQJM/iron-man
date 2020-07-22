@@ -36,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private IronUserDetailsService userDetailsService;
 
-
     /**
      * 数据源
      */

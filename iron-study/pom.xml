@@ -10,6 +10,50 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>iron-study</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>iron-study-autoconfigure</module>
+        <module>algorithm</module>
+        <module>iron-spring-jdbc</module>
+        <module>iron-spring-jpa</module>
+        <module>iron-es</module>
+        <module>iron-man-mybaits</module>
+        <module>iron-man-mybatis-plus</module>
+    </modules>
 
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/nl.siegmann.epublib/epublib-core -->
+        <!--<dependency>-->
+            <!--<groupId>nl.siegmann.epublib</groupId>-->
+            <!--<artifactId>epublib-core</artifactId>-->
+            <!--<version>3.1</version>-->
+        <!--</dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/nl.siegmann.epublib/epublib-tools -->
+        <!--<dependency>-->
+            <!--<groupId>nl.siegmann.epublib</groupId>-->
+            <!--<artifactId>epublib-tools</artifactId>-->
+            <!--<version>3.1</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.28</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/xmlpull/xmlpull -->
+        <dependency>
+            <groupId>xmlpull</groupId>
+            <artifactId>xmlpull</artifactId>
+            <version>1.1.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+    </dependencies>
 
 </project>

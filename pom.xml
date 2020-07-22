@@ -21,6 +21,8 @@
         <module>iron-man-order</module>
         <module>iron-man-resource</module>
         <module>iron-man-web</module>
+        <module>dtx-seata-demo-bank1</module>
+        <module>dtx-seata-demo-bank2</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -57,6 +59,22 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
+
+        <!--<dependencies>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-dependencies</artifactId>-->
+                <!--<version>2.1.3.RELEASE</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.cloud</groupId>-->
+                <!--<artifactId>spring-cloud-dependencies</artifactId>-->
+                <!--&lt;!&ndash;<version>Dalston.SR2</version>&ndash;&gt;-->
+                <!--<version>Greenwich.RELEASE</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
     </dependencyManagement>
 
     <build>

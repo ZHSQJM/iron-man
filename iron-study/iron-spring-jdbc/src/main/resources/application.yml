@@ -1,0 +1,39 @@
+#spring:
+#  datasource:
+#    primary:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      jdbc-url: jdbc:mysql://localhost:3306/iron_blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+#      username: root
+#      password: zhs
+#      platform: mysql
+#      type: com.alibaba.druid.pool.DruidDataSource
+#    secondary:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      jdbc-url: jdbc:mysql://localhost:3306/iron_blog2?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+#      username: root
+#      password: zhs
+#      platform: mysql
+#      type: com.alibaba.druid.pool.DruidDataSource
+
+
+primarydb:
+  uniqueResourceName: primary
+  xaDataSourceClassName: com.mysql.cj.jdbc.MysqlXADataSource
+  xaProperties:
+    url: jdbc:mysql://localhost:3306/iron_blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    user: root
+    password: zhs
+  exclusiveConnectionModel: true;
+  minPoolSize: 3
+  maxPoolSize: 10
+  testQuery: SELECT 1 from dual
+secondarydb:
+  uniqueResourceName: secondary
+  xaDataSourceClassName: com.mysql.cj.jdbc.MysqlXADataSource
+  xaProperties:
+    url: jdbc:mysql://localhost:3306/iron_blog2?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    user: root
+    password: zhs
+  exclusiveConnectionModel: true;
+  minPoolSize: 3
+  maxPoolSize: 10

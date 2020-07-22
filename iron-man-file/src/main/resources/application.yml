@@ -27,7 +27,12 @@ file:
 ##oss-cn-beijing.aliyuncs.com
 ##LTAI4G4nnmfTWrBQ2Pn5Vy9v
 ##Mijc3BcUCzwJzd3UQ8IdaZMMLBl0Y0
-
+oss:
+  endpoint: https://oss-cn-beijing.aliyuncs.com
+  accesskeyId: LTAI4G4nnmfTWrBQ2Pn5Vy9v
+  accesskeySecret: Mijc3BcUCzwJzd3UQ8IdaZMMLBl0Y0
+  bucket: iron-file
+  domian: https://iron-file.oss-cn-beijing.aliyuncs.com
 
 security:
   oauth2:

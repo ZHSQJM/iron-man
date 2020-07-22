@@ -1,0 +1,56 @@
+#spring:
+#  datasource:
+#    primary:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      jdbc-url: jdbc:mysql://localhost:3306/iron_blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+#      username: root
+#      password: zhs
+#      platform: mysql
+#    secondary:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      jdbc-url: jdbc:mysql://localhost:3306/iron_blog2?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+#      username: root
+#      password: zhs
+#      platform: mysql
+#  mybatis:
+#     mapper-locations: classpath:mapper/*.xml
+#  logging:
+#     level:
+#       com.zhs: debug
+#spring:
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/iron_blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: zhs
+#    platform: mysql
+#  mybatis:
+#    mapper-locations: classpath:mapper/*.xml
+#  logging:
+#    level:
+#      com.zhs: debug
+
+primary:
+  uniqueResourceName: primary
+  xaDataSourceClassName: com.mysql.cj.jdbc.MysqlXADataSource
+  xaProperties:
+    url: jdbc:mysql://localhost:3306/iron_blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    user: root
+    password: zhs
+  exclusiveConnectionMode: true
+  minPoolSize: 3
+  maxPoolSize: 10
+  testQuery: SELECT 1 from dual
+secondary:
+  uniqueResourceName: secondaty
+  xaDataSourceClassName: com.mysql.cj.jdbc.MysqlXADataSource
+  xaProperties:
+    url: jdbc:mysql://localhost:3306/iron_blog2?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    user: root
+    password: zhs
+  exclusiveConnectionMode: true
+  minPoolSize: 3
+  maxPoolSize: 10
+  testQuery: SELECT 1 from dual
