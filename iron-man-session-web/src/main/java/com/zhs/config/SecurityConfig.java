@@ -1,5 +1,6 @@
 package com.zhs.config;
 
+import com.zhs.auth.ExpiredSessionStrategy;
 import com.zhs.auth.IronLogoutSuccessHandler;
 import com.zhs.auth.IronUserDetailsService;
 import com.zhs.auth.kaptcha.KaptchaCodeFilter;

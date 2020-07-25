@@ -1,11 +1,8 @@
-package com.zhs.common;
+package com.zhs.common.response.two;
 
+import com.zhs.common.ResultCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @project: iron-man
@@ -32,18 +29,18 @@ public class R<T> {
     // 通用返回成功
     public static R ok() {
         R r = new R();
-        r.setSuccess(ResultCodeEnum.SUCCESS.getSuccess());
-        r.setCode(ResultCodeEnum.SUCCESS.getCode());
-        r.setMessage(ResultCodeEnum.SUCCESS.getMessage());
+        r.setSuccess(com.zhs.common.ResultCodeEnum.SUCCESS.getSuccess());
+        r.setCode(com.zhs.common.ResultCodeEnum.SUCCESS.getCode());
+        r.setMessage(com.zhs.common.ResultCodeEnum.SUCCESS.getMessage());
         return r;
     }
 
     // 通用返回失败，未知错误
     public static R error() {
         R r = new R();
-        r.setSuccess(ResultCodeEnum.UNKNOWN_ERROR.getSuccess());
-        r.setCode(ResultCodeEnum.UNKNOWN_ERROR.getCode());
-        r.setMessage(ResultCodeEnum.UNKNOWN_ERROR.getMessage());
+        r.setSuccess(com.zhs.common.ResultCodeEnum.UNKNOWN_ERROR.getSuccess());
+        r.setCode(com.zhs.common.ResultCodeEnum.UNKNOWN_ERROR.getCode());
+        r.setMessage(com.zhs.common.ResultCodeEnum.UNKNOWN_ERROR.getMessage());
         return r;
     }
 

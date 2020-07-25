@@ -54,3 +54,22 @@ secondary:
   minPoolSize: 3
   maxPoolSize: 10
   testQuery: SELECT 1 from dual
+rsa:
+  encrypt:
+    open: true # 是否开启加密 true  or  false
+    showLog: true # 是否打印加解密log true  or  false
+    publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+k/BAfaDikuNS+Fp+mygxAFlzZLQWB0llFp87nVUkIyNxmxZLlApkC3uIyLCTCYWMqz1Im6q+El2QDoYTrcRi36qlmavCTWPmPmx2NAUYQH7V67GrDfNj4oqZAmI5hxob4bas0vkLy6uuZ9IW8vmnc/LR8cDbNwpmx1WiZ/9O2wIDAQAB# RSA公钥 软件生成
+    privateKey: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAL6T8EB9oOKS41L4
+                Wn6bKDEAWXNktBYHSWUWnzudVSQjI3GbFkuUCmQLe4jIsJMJhYyrPUibqr4SXZAO
+                hhOtxGLfqqWZq8JNY+Y+bHY0BRhAftXrsasN82PiipkCYjmHGhvhtqzS+QvLq65n
+                0hby+adz8tHxwNs3CmbHVaJn/07bAgMBAAECgYAktbqBsbFb8492XACSgrCrP7X7
+                VFqcI6svnbvub9AGtf4N1CHnTQzzWILjRkU9DYh8IEAdzF6HXmJHbYTGJaK+U9rv
+                13vbCyU6yguC/YcwbrCpNR47yZNRY48gz8FYGeOZxiVSZKU79Lh4YF24rD2XmA+E
+                FHlVadUZHrt2N9tggQJBAOEo/DY5By44Z5bmHoRDUaQbqw2JSdj1OWzhhYriVic1
+                F1GILIvDQkSVPM55P1wOwJXCXKKbAflHKbmmRefF/V0CQQDYrlzEOZMSL5enEpHo
+                Abxu8MwCBaTcbtsmzkzrSd5HpaxvwPwFMJVpeNB8q7iQTSLHVTNc0+JDELmRpdoA
+                B4GXAkBFd9u47wdkH0r2p7EqpYp+03qHBqCeK6q4CSymmQZzulGjehwkUu4TMug7
+                2/TMdlC84+ao1KJbQrWA7egLhm6RAkBKtgwsaIGqYpiStddzPK4BPqvJArMugla0
+                Eav58NVgtOI5AjyjeXX7EPoqEnen4cDdJCZ6mmBIqYqiiqIZIn1vAkEAzhSL0IWt
+                upE0sDyFBozmwhcoJi2Gh04L18rDmx2iDmpgpfH9MzLcCMksFXJzFV/VmF2c2z9w
+                pIYE/ZCGyoQPcQ== # RSA私钥 软件生成

@@ -1,6 +1,7 @@
 package com.zhs.mybatis;
 
 
+import cn.shuibo.annotation.EnableSecurity;
 import com.zhs.mybatis.dao.primary.Article;
 import com.zhs.mybatis.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import java.util.Date;
  */
 @SpringBootApplication
 @RestController
+@EnableSecurity
 public class MyabtisApplication {
 
     public static void main(String[] args) {

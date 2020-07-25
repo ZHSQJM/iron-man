@@ -9,6 +9,7 @@ import com.aliyun.oss.model.PutObjectRequest;
 import com.zhs.common.IronResult;
 import com.zhs.common.enums.FileEnum;
 import com.zhs.entity.file.IronFile;
+import com.zhs.file.utils.AliyunOssUtil;
 import com.zhs.service.file.IIronFileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -136,4 +137,37 @@ public class OssController {
         String url = domian +path;
         return IronResult.isOk(url);
     }
+
+
+    @Autowired
+    private AliyunOssUtil ossUtil;
+
+    @PostMapping("/uploadFile")
+    public String upload(@RequestParam("file") MultipartFile file) {
+        try {
+            if (file != null) {
+                String fileName = file.getOriginalFilename();
+                if (!"".equals(fileName.trim())) {
+                    File newFile = new File(fileName);
+
+                    FileOutputStream os = new FileOutputStream(newFile);
+                    os.write(file.getBytes());
+                    os.close();
+
+                    //把file里的内容复制到奥newFile中
+                    file.transferTo(newFile);
+                    String upload = ossUtil.upload(newFile);
+
+                    //图片回显地址:
+                    //http://yiyige.oss-cn-hangzhou.aliyuncs.com/images/2019-10-21/6c964702b67d4eeb920e7f1f4358189b-dishu.jpg
+                    System.out.println("path=" + upload);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "success";
+    }
+
 }

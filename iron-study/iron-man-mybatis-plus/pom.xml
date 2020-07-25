@@ -52,9 +52,27 @@
            <artifactId>springfox-swagger-ui</artifactId>
            <version>2.6.1</version>
        </dependency>
+       <!--<dependency>-->
+           <!--<groupId>org.springframework.boot</groupId>-->
+           <!--<artifactId>spring-boot-starter-jta-atomikos</artifactId>-->
+       <!--</dependency>-->
+
        <dependency>
            <groupId>org.springframework.boot</groupId>
-           <artifactId>spring-boot-starter-jta-atomikos</artifactId>
+           <artifactId>spring-boot-starter-test</artifactId>
+       </dependency>
+
+       <!--代码生成器-->
+       <dependency>
+           <groupId>org.freemarker</groupId>
+           <artifactId>freemarker</artifactId>
+           <version>2.3.30</version>
+       </dependency>
+
+       <dependency>
+           <groupId>com.baomidou</groupId>
+           <artifactId>mybatis-plus-generator</artifactId>
+           <version>3.3.2</version>
        </dependency>
    </dependencies>
 </project>

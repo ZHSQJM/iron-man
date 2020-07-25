@@ -23,6 +23,8 @@
         <module>iron-man-web</module>
         <module>dtx-seata-demo-bank1</module>
         <module>dtx-seata-demo-bank2</module>
+        <module>iron-man-netty</module>
+        <module>iron-man-redis</module>
     </modules>
     <packaging>pom</packaging>
 
